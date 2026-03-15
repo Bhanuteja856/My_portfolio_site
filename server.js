@@ -63,17 +63,6 @@ app.get("/api/portfolio", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("✅ Backend Running");
 });
-const path = require('path');
-
-// Tell Express to serve the static files from your frontend folder
-// (Change 'public' to whatever your HTML folder is named)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Send your index.html file when someone visits the main link
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // ── SERVER START ────────────────────────────────
 const PORT = process.env.PORT || 8080;
 
